@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="location">location</button>
+    <button id="size">size</button>
+    <p id="demo"></p>
+    <script>
+        // document.getElementsById("location").addEventListener("click", myfunc);
+        document.getElementById("location").addEventListener("click", myfunc);
+        document.getElementById("size").addEventListener("click", myfunc1);
+
+
+        function myfunc() {
+            document.getElementById("demo").innerHTML = window.location.href;
+        }
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Display the current URL and window size in pixels
+        console.log(`Current URL: ${currentUrl}`);
+        console.log(`Window size: ${windowWidth}px x ${windowHeight}px`);
+        function myfunc1() {
+
+            document.getElementById("demo").innerHTML = `Window size: ${windowWidth}px x ${windowHeight}px`
+        }
+
+    </script>
+</body>
+
+</html>

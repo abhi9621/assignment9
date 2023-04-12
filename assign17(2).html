@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<body>
+    <script>
+        const screenWidth = screen.width;
+        const screenHeight = screen.height;
+        const screenColorDepth = screen.colorDepth;
+        document.getElementById("demo").innerHTML="Screen width:"+ screenWidth 
+        document.getElementById("demo1").innerHTML="Screen height:"+ screenHeight
+        document.getElementById("demo2").innerHTML="Screen color depth:"+ screenColorDepth;
+
+        console.log(`Screen width: ${screenWidth}px`);
+        console.log(`Screen height: ${screenHeight}px`);
+        console.log(`Screen color depth: ${screenColorDepth} bits`);
+
+    </script>
+</body>
+
+</html>
