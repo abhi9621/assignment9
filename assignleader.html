@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+</head>
+<body>
+  <h1>Leaderboard</h1>
+  <table id="leaderboard">
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+  </table>
+  <form id="add-form">
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="score" placeholder="Score">
+    <button type="submit">Add</button>
+    <button type="button">delete</button>
+  </form>
+  <script>
+    const leaderboard = document.getElementById('leaderboard');
+    const addForm = document.getElementById('add-form');
+    let rank = 1;
+
+    function addTask(rank, name, score) {
+      const row = leaderboard.insertRow();
+      const rankCell = row.insertCell(0);
+      const nameCell = row.insertCell(1);
+      const scoreCell = row.insertCell(2);
+      rankCell.innerHTML = rank;
+      nameCell.innerHTML = name;
+      scoreCell.innerHTML = score;
+    }
+
+    function updateTask(row, name, score) {
+      row.cells[1].innerHTML = name;
+      row.cells[2].innerHTML = score;
+    }
+
+    function deleteTask(row) {
+      leaderboard.deleteRow(row.rowIndex);
+    }
+
+    function readTasks() {
+      const rows = leaderboard.rows;
+      const tasks = [];
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const name = row.cells[1].innerHTML;
+        const score = row.cells[2].innerHTML;
+        tasks.push({name, score});
+      }
+      return tasks;
+    }
+
+    addForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const score = document.getElementById('score').value;
+      addTask(rank, name, score);
+      rank++;
+    });
+
+    addForm.addEventListener('button', (event) => {
+        alert("hi");
+        deleteTask(row);
+        rank--;
+      
+    });
+
+
+  </script>
+</body>
+</html>
