@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function extractTitleAndAuthor(books, ...args) {
+            const newBooks = books.map(({ title, author }) => ({ title, author }));
+            console.log(...newBooks, ...args);
+        }
+
+        const books = [
+            { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+            { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+            { title: '1984', author: 'George Orwell' }
+        ];
+
+        extractTitleAndAuthor(books, 'Additional Argument 1', 'Additional Argument 2');
+        const randomDelay = () => new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const randomNum = Math.floor(Math.random() * 10) + 1;
+                if (randomNum) {
+                    resolve(randomNum);
+                } else {
+                    reject('Error: Random number generation failed');
+                }
+            }, 1000);
+        });
+
+        randomDelay()
+            .then((num) => console.log(`Random number generated: ${num}`))
+            .catch((err) => console.error(err));
+    </script>
+</body>
+
+</html>
