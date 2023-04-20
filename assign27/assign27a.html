@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        localStorage.setItem('firstName', 'John');
+        localStorage.setItem('lastName', 'Doe');
+        localStorage.setItem('age', '30');
+        localStorage.setItem('country', 'USA');
+        localStorage.setItem('city', 'New York');
+
+
+        const firstName = localStorage.getItem('firstName');
+        const lastName = localStorage.getItem('lastName');
+        const age = localStorage.getItem('age');
+        const country = localStorage.getItem('country');
+        const city = localStorage.getItem('city');
+        setTimeout(() => {
+            // console.log("Delayed for 1 second.");
+            localStorage.clear()
+        }, "1000");
+    </script>
+</body>
+
+</html>
